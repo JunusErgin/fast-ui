@@ -35,20 +35,19 @@ h2 {
 
 .col {
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 section {
     flex: 1;
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 32px 32px;
-}
-
-.col-1400 section:nth-child(2) {
     margin-left: -1px;
 }
 
-.col section:nth-child(2) {
-    margin-left: 0;
+.col-1400 section:first-of-type {
+    margin-left: 0px;
 }
 
 select {
@@ -98,6 +97,37 @@ input:hover {
     margin-top: 16px;
 }
 
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.row * {
+    margin-right: 16px;
+}
+
+.play-btn {
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+}
+
+.play-btn:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.play-btn:before {
+    content: '\25BA';
+    color: #161b2c;
+}
+
 ::placeholder {
     color: white;
 }
@@ -145,16 +175,24 @@ button:hover {
     flex: unset;
 }
 
-.height-25 {
-    height: 25%;
+.min-height-25 {
+    min-height: 25%;
 }
 
-.height-50 {
-    height: 50%;
+.min-height-50 {
+    min-height: 50%;
 }
 
-.height-75 {
-    height: 75%;
+.min-height-75 {
+    min-height: 75%;
+}
+
+.col-850 {
+    display: flex;
+}
+
+.fill-rest {
+    flex: 1;
 }
 
 @media (max-width: 1400px) {
@@ -180,9 +218,12 @@ button:hover {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
     header {
         background-color: #1a2336;
         padding: 20px 30px;
+    }
+    .col-850 {
+        flex-direction: column;
     }
 }

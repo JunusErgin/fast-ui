@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
 </head>
 
 <body>
@@ -21,34 +22,102 @@
             <div class="card"></div>
         </section>
         <section class="col">
-            <section class="height-25">
-                <h2>Transaktionen</h2>
-                <div class="mb-16">
-                    <select name="from" id="from" class="mr-16">
-                        <option value="" disabled selected>Von</option>
-                        <option value="Manuel">Manuel</option>
-                        <option value="Junus">Junus</option>
-                        <option value="Anil">Anil</option>
-                    </select>
+            <div class="min-height-25 col-850">
+                <section>
 
-                    <select name="to" id="to">
-                        <option value="" disabled selected>An</option>
-                        <option value="Manuel">Manuel</option>
-                        <option value="Junus">Junus</option>
-                        <option value="Anil">Anil</option>
-                    </select>
-                </div>
+                    <h2>Transaktionen</h2>
+                    <div class="mb-16">
+                        <select name="from" id="from" class="mr-16">
+                            <option value="" disabled selected>Von</option>
+                            <option value="Manuel">Manuel</option>
+                            <option value="Junus">Junus</option>
+                            <option value="Anil">Anil</option>
+                        </select>
 
-                <div>
-                    <input type="text" placeholder="Betrag" class="mr-16">
+                        <select name="to" id="to">
+                            <option value="" disabled selected>An</option>
+                            <option value="Manuel">Manuel</option>
+                            <option value="Junus">Junus</option>
+                            <option value="Anil">Anil</option>
+                        </select>
+                    </div>
 
-                    <button>Abschicken</button>
-                </div>
-            </section>
-            <section class="height-75">B</section>
+                    <div>
+                        <input type="text" placeholder="Betrag" class="mr-16">
+
+                        <button>Abschicken</button>
+                    </div>
+                </section>
+
+
+                <section>
+                    <h2>Nodes</h2>
+                    <div class="row mb-16">
+                        <div class="play-btn"></div> Node 0 - Junus
+                    </div>
+
+                    <div class="row">
+                        <div class="play-btn"></div> Node 0 - Manuel
+                    </div>
+                </section>
+            </div>
+            <div class="col-850 fill-rest">
+                <section>
+                    <h2>Transaktionen</h2>
+                    <div class="card mb-16">Manuel 🠖 Junus: 5.00$ </div>
+                    <div class="card">Manuel 🠖 Junus: 3.00$ </div>
+                </section>
+                <section>
+                    <h2>Daten</h2>
+
+                    <canvas id="myChart"></canvas>
+                </section>
+                <section>
+                    <h2>Log</h2>
+                </section>
+            </div>
         </section>
     </div>
 
+
+
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Junus', 'Manuel', 'Steffi', 'Jessica', 'Mihai', 'Anil'],
+                datasets: [{
+                    label: 'Vermögen',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
