@@ -23,6 +23,11 @@ header {
     top: 0;
 }
 
+.container {
+    padding: 0px 100px
+}
+
+
 h1,
 h2 {
     font-weight: 400;
