@@ -23,6 +23,19 @@ header {
     top: 0;
 }
 
+.show-now {
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 4px dashed white;
+}
+
+.container-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
 .container {
     padding: 0px 100px
 }
