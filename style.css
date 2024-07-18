@@ -45,6 +45,8 @@ header {
     box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
     background-color: white;
     color: #1a2336;
+    max-width: 70vw;
+    margin-bottom: 4px;
 }
 
 .msg-me {
@@ -52,6 +54,8 @@ header {
     box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
     background-color: rgb(194, 24, 91);
     color: white;
+    max-width: 70vw;
+    margin-bottom: 4px;
 }
 
 
