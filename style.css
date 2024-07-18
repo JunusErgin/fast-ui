@@ -47,6 +47,8 @@ header {
     color: #1a2336;
     max-width: 70vw;
     margin-bottom: 4px;
+    font-size: 12px;
+    padding: 4px;
 }
 
 .msg-me {
@@ -56,6 +58,9 @@ header {
     color: white;
     max-width: 70vw;
     margin-bottom: 4px;
+    margin-left: auto;
+    font-size: 12px;
+    padding: 4px;
 }
 
 
